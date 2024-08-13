@@ -1,0 +1,8 @@
+td {
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+}
+.done {
+  background-color: green;
+}
