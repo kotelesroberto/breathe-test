@@ -1,8 +1,159 @@
-td {
+body, html {
+  width: 100%;
+}
+
+.width-full {
+  width: 100%;
+}
+
+/*=============================================
+= Style definition of Habit Chart
+= Solution: HabitChart.jsx
+=============================================*/
+.habitChart td {
   border: 1px solid black;
   width: 20px;
   height: 20px;
 }
-.done {
+
+.habitChart .done {
   background-color: green;
 }
+
+/*=============================================
+= Style definition of transformed select HTML item 
+= Solution: SelectStyle.jsx
+=============================================*/
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.margin-l-2 {
+  margin-left: 2%;
+}
+
+.margin-r-2 {
+  margin-right: 2%;
+}
+
+form input {
+  border: 1px solid #000;
+  padding: 4px 6px;
+  font-size: 1rem;
+}
+
+.selectmenu {
+  position: relative;
+  width: auto;
+  display: inline-block;
+  border: 1px solid #000;
+  outline: none;
+}
+
+.selectmenu-container {
+  max-width: 100%;
+  min-width: 100%;
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-align: left;
+  box-sizing: border-box;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  padding: 4px 6px;
+}
+
+.selectmenu-container:hover {
+  color: #000;
+}
+
+.selectmenu-label {
+  margin-right: 25px;
+  user-select: none;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.selectmenu-arrow {
+  width: 23px;
+  height: 23px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+
+.selectmenu-arrow:before {
+  position: absolute;
+  content: ""; 
+  border-top: 5px solid transparent;
+  border-left: 5px solid black;
+  border-bottom: 5px solid transparent;
+  right: 0;
+  top: 5px;
+  transform: rotate(90deg);
+}
+
+.selectmenu--active .selectmenu-arrow:before {
+  transform: rotate(-90deg);
+}
+
+
+.selectmenu-options {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: auto;
+  overflow-x: hidden;
+  width: 100%;
+  border: 1px solid #ccc;
+  position: absolute;
+  background: #fff;
+  z-index: 1000;
+  top: 28px;
+  display: none;
+  user-select: none;
+}
+.selectmenu--active .selectmenu-options {
+  display: block;
+  max-height: 200px;
+}
+.selectmenu-option {
+  padding: 4px 6px;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.selectmenu-option:last-child {
+  background-color: #178a1a;
+  color: #fff;
+}
+
+.selectmenu-option:hover {
+  color: #fff;
+  background-color: #2090ff;
+}
+
+.selectmenu-option--selected {
+  font-weight: 700;
+}
+
+.selectmenu-option--disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.selectmenu-option--disabled:hover {
+  background: none;
+}
+

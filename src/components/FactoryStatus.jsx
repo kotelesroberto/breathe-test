@@ -2,7 +2,7 @@ import { useState } from "react";
 
 /**
  * Factory supply chain
- * 
+ *
  * @author Robert Koteles
  * @desc This component is for marking chain dependancy in the lifecycle of a factory. If a step is not available, any other steps after, related to that step should be disabled.
  * @version 1.0.0
@@ -27,8 +27,8 @@ const FactoryStatus = () => {
     let falseItems = [];
 
     // create a deep clone of the status object to avoid memory issues
-      let tempStationStates = Object.assign({}, stationStates);
-      
+    let tempStationStates = Object.assign({}, stationStates);
+
     // progress flags
     let statusItemsAfter = [true, true];
     let hasItemClick = [false, false];
@@ -67,30 +67,31 @@ const FactoryStatus = () => {
   return (
     <div>
       <h3>Control Panel</h3>
-      
-      // TODO: for some reason the for(... in...) iteration was marked as an issue by Linter, that's why I approached by the Object way
-      {Object.entries(stationStates).map((entry) => {
-        let key = entry[0];
-        let value = entry[1];
+      {
+        // TODO: for some reason the for(... in...) iteration was marked as an issue by Linter, that's why I approached by the Object way
+        Object.entries(stationStates).map((entry) => {
+          let key = entry[0];
+          let value = entry[1];
 
-        return (
+          return (
             <div key={key}>
-            <input
-              type="checkbox"
-              id={`${key}-status`}
-              checked={value}
-              onClick={() => setItem(key)}
-            />
-            <label
-              htmlFor={`${key}-status`}
-              id={`${key}-station`}
-              style={{ backgroundColor: value ? "" : "red" }}
-            >
-              {key.toUpperCase()} {value.toString()}{" "}
-            </label>
-          </div>
-        );
-      })}
+              <input
+                type="checkbox"
+                id={`${key}-status`}
+                checked={value}
+                onClick={() => setItem(key)}
+              />
+              <label
+                htmlFor={`${key}-status`}
+                id={`${key}-station`}
+                style={{ backgroundColor: value ? "" : "red" }}
+              >
+                {key.toUpperCase()} {value.toString()}{" "}
+              </label>
+            </div>
+          );
+        })
+      }
     </div>
   );
 };

@@ -65,7 +65,9 @@ const HabitChart = ({ habitData }) => {
   };
 
   return (
-    <div>
+    <div className="habitChart">
+      <h3>Habit Chart</h3>
+
       <table id="chart">
         <tbody>
           {tempArray.map((row) => {
